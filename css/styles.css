@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-family: monospace;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+body {
+  background-color: #232323;
+  margin: 0;
+  color: indianred;
+}
+
+h1 {
+  margin: 0.67em 0;
+  font-size: 2.0736rem;
+}
+
+h1 {
+  font-size: 27.648px;
+}
+
+@media screen and (min-width: 320px) {
+  h1 {
+    font-size: calc(27.648px + 26.352 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 54px;
+  }
+}
+
+h2 {
+  font-size: 1.728rem;
+}
+
+h2 {
+  font-size: 27.648px;
+}
+
+@media screen and (min-width: 320px) {
+  h2 {
+    font-size: calc(27.648px + 26.352 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 54px;
+  }
+}
+
+h3 {
+  font-size: 1.44rem;
+}
+
+h3 {
+  font-size: 23.04px;
+}
+
+@media screen and (min-width: 320px) {
+  h3 {
+    font-size: calc(23.04px + 12.96 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h3 {
+    font-size: 36px;
+  }
+}
+
+.container-maximus {
+  padding: 3rem;
+}
+
+.contadores_principal {
+  width: 100%;
+  height: auto;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contadores_principal .contador {
+  width: 24%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: bisque;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+}
+
+.contadores_principal .contador .number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@-webkit-keyframes aparecer {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.ocultar {
+  opacity: 0;
+}
+
+.aparecer {
+  -webkit-animation: aparecer 1.3%;
+          animation: aparecer 1.3%;
+}
+/*# sourceMappingURL=styles.css.map */

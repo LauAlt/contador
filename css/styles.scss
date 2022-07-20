@@ -1,0 +1,119 @@
+// mixins
+// ----------------- FLUID TEXT CODE ---------------------------------------
+$mod_1: 1.2; // mobile
+$mod_2: 1.5; // desktop
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+  }
+  
+  @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+  
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+      & {
+        font-size: $min-font-size;
+        @media screen and (min-width: $min-vw) {
+          font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        }
+        @media screen and (min-width: $max-vw) {
+          font-size: $max-font-size;
+        }
+      }
+    }
+  }
+// ---------------------------------------------------------
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: monospace;
+    // FLUID TEXT ------
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+body{
+    background-color: #232323;
+    margin: 0;
+    color: indianred;
+}
+
+h1{
+    margin: 0.67em 0;
+    // FLUID TEXT ------------
+    font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h2 {  
+    font-size: $mod_1*$mod_1*$mod_1 *1rem; 
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h3 { 
+    font-size: $mod_1*$mod_1 *1rem;
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
+
+.container-maximus{
+    padding: 3rem;
+}
+
+.contadores_principal{
+    width: 100%;
+    height: auto;
+    padding: 3rem;
+    display: flex;
+
+    .contador{
+        width: 24%;
+        display: flex;
+        flex-direction: column;
+        background-color: bisque;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        .number{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+// accion
+
+@keyframes aparecer {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ocultar{
+    opacity: 0;
+}
+
+.aparecer{
+    animation: aparecer 1.3%;
+}
